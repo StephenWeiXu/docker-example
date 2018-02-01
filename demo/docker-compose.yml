@@ -1,0 +1,13 @@
+version '3'
+services
+  server:
+  build:
+  image: docker-registry.acron.cirrostratus.org/demo/node-server
+  ports:
+    - 3000:3000
+  volumes:
+    - "./app.js:/myfolder/app.js" # map local file to container foler file
+
+client:
+  image: node:alpine
+  command: ls
